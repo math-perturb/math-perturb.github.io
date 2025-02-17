@@ -1,1 +1,164 @@
-Initial test
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Benchmarking LLMs' Math Reasoning Abilities against Hard Perturbations">
+  <meta name="keywords" content="Benchmarks, AI, MATH-Perturb, Math Perturb">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> MATH-Perturb</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <span style="vertical-align: middle">MATH-Perturb</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Benchmarking LLMs' Math Reasoning Abilities </br>against Hard Perturbations
+            <!-- <br> --> 
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+                <!-- Kaixuan Huang, Jiacheng Guo, Zihao Li, Xiang Ji, Jiawei Ge, Wenzhe Li, Yingqing Guo, Tianle Cai, Hui Yuan, Runzhe Wang, Yue Wu, Ming Yin, Shange Tang, Yangsibo Huang, Chi Jin, Xinyun Chen, Chiyuan Zhang, Mengdi Wang -->
+              <a href="https://hackyhuang.github.io/">Kaixuan Huang</a><sup style="color:#6fbf73;">1</sup>,</span>
+              Jiacheng Guo<sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://zihaoli0629.github.io/">Zihao Li</a><sup style="color:#6fbf73;">1</sup>,</span>
+              Xiang Ji<sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://jiaweige0416.github.io/">Jiawei Ge</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://wenzhe-li.github.io/">Wenzhe Li</a><sup style="color:#6fbf73;">1</sup>,</span>
+              Yingqing Guo<sup style="color:#6fbf73;">1</sup>,</span></br>
+              <a href="https://www.tianle.website/">Tianle Cai</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://hhhhuiyuan.github.io/">Hui Yuan</a><sup style="color:#6fbf73;">1</sup>,</span>
+              Runzhe Wang<sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://yuewu.us/">Yue Wu</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="http://mingyin0312.github.io/">Ming Yin</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://shangetang.github.io/">Shange Tang</a><sup style="color:#6fbf73;">1</sup>,</span></br>
+              <a href="https://hazelsuko07.github.io/yangsibo/">Yangsibo Huang</a><sup style="color:#ed4b82">2</sup>,</span>
+              <a href="https://sites.google.com/view/cjin/home">Chi Jin</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <a href="https://jungyhuk.github.io/">Xinyun Chen</a><sup style="color:#ed4b82">2</sup>,</span>
+              <a href="https://pluskid.org/">Chiyuan Zhang</a><sup style="color:#ed4b82">2</sup>,</span>
+              <a href="https://mwang.princeton.edu/">Mengdi Wang</a><sup style="color:#6fbf73;">1</sup></span>
+            
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup style="color:#6fbf73;">1</sup>Princeton University,</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>Google</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2502.06453"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2502.06453"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- Code Link. -->
+               <!--
+              <span class="link-block">
+                <a href="https://math-perturb.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+
+              <!-- Dataset Link. --> 
+              <!-- <span class="link-block">
+                <a href="https://math-perturb.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> -->
+              
+              <!-- Twitter Link. -->
+              <span class="link-block">
+                <a href="https://x.com/KaixuanHuang1/status/1889366663545630735"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <!-- 💻🔗 -->
+                      <p style="font-size:18px">🌐</p>
+                  </span>
+                  <span>Twitter</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">Citation</h2>
+    <pre><code>@article{huang2025math,
+        title={MATH-Perturb: Benchmarking LLMs' Math Reasoning Abilities against Hard Perturbations},
+        author={Huang, Kaixuan and Guo, Jiacheng and Li, Zihao and Ji, Xiang and Ge, Jiawei and Li, Wenzhe and Guo, Yingqing and Cai, Tianle and Yuan, Hui and Wang, Runzhe and others},
+        journal={arXiv preprint arXiv:2502.06453},
+        year={2025}
+      }</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer" style="padding-bottom: 1.5em; padding-top: 1.5em;">
+    <div class="container">
+      <div class="content has-text-centered">
+        <span>The website is adapted from <a href="https://nerfies.github.io">Nerfies, <a href="https://mathvista.github.io/">MathVista</a>, and <a href="https://charxiv.github.io/">CharXiv</a>.</span>
+  
+  
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
