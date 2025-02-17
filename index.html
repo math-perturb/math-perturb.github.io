@@ -134,11 +134,50 @@
 </section>
 
 
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+        <img src="./static/images/teaser.png" alt="overview">     
+        <div class="content has-text-justified">
+            <p>
+                <span style="font-weight: bold;">Left</span>: The overview of MATH-Perturb Benchmark. <span style="font-weight: bold;">Right</span>: An example of the original problem, its simple perturbation, its hard perturbation, and the corresponding model responses that overfit the short-cut solution. The <span style="font-weight: bold;">simple perturbation</span> to the problem is non-essential, so the modified problem can be solved using the same method as the original problem. The <span style="font-weight: bold;">hard perturbation</span> changes the problem fundamentally and it requires more difficult problem-solving skills. The shortcut solution can solve the original problem and its simple perturbation but fails on the hard perturbation.
+            </p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+        <h2 class="title is-3", id="introduction">
+            <span class="fancy_text_color">Introduction</span>
+        </h2>
+        <div class="content has-text-justified">
+            <p> 
+              Large language models have demonstrated impressive performance on challenging mathematical reasoning tasks, which has triggered the discussion of whether the performance is achieved by true reasoning capability or memorization. To investigate this question, we construct <span class="math_p_simple">MATH-P-Simple</span> and <span class="math_p_hard">MATH-P-Hard</span>, each consisting of 279 perturbed math problems derived from level-5 (hardest) problems in the MATH dataset (Hendrycks et. al., 2021): 
+              <ul>
+                <li>for <span class="math_p_simple">MATH-P-Simple</span>, we make <span style="font-weight: bold;">simple perturbations</span>, i.e., non-essential modifications to the problem, ensuring that the modified problem can be solved using the same method as the original problem.</li>
+                <li>for <span class="math_p_hard">MATH-P-Hard</span>, we make <span style="font-weight: bold;">hard perturbations</span>, i.e., small but fundamental modifications to the problem so that the modified problem cannot be solved using the same method as the original problem. Instead, it requires deeper math understanding and harder problem-solving skills.</li>
+              </ul>
+            </p>
+              
+            <p>
+                <img src="./static/images/performance.png" alt="performance">     
+              We observe significant performance drops on <span class="math_p_hard">MATH-P-Hard</span> across various models. We also raise concerns about a novel form of memorization where models blindly apply learned problem-solving skills without assessing their applicability to modified contexts. This issue is amplified when using original problems for in-context learning. We call for research efforts to address this challenge, which is critical for developing more robust and reliable reasoning models.
+            </p>
+          </div>
+        </div>
+    </div>
+  </section>
+
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title is-3 has-text-centered">Citation</h2>
+    <h2 class="title is-3 has-text-centered">
+        <span class="fancy_text_color">Citation</span>
+    </h2>
     <pre><code>@article{huang2025math,
         title={{MATH-Perturb}: Benchmarking {LLMs}' Math Reasoning Abilities against Hard Perturbations},
         author={Kaixuan Huang and Jiacheng Guo and Zihao Li and Xiang Ji and Jiawei Ge and Wenzhe Li and Yingqing Guo and Tianle Cai and Hui Yuan and Runzhe Wang and Yue Wu and Ming Yin and Shange Tang and Yangsibo Huang and Chi Jin and Xinyun Chen and Chiyuan Zhang and Mengdi Wang},
@@ -153,7 +192,7 @@
 <footer class="footer" style="padding-bottom: 1.5em; padding-top: 1.5em;">
     <div class="container">
       <div class="content has-text-centered">
-        <span>The website is adapted from <a href="https://nerfies.github.io">Nerfies, <a href="https://mathvista.github.io/">MathVista</a>, and <a href="https://charxiv.github.io/">CharXiv</a>.</span>
+        <span>The website is adapted from <a href="https://nerfies.github.io">Nerfies, <a href="https://mathvista.github.io/">MathVista</a>, <a href="https://boyiwei.com/alignment-attribution/">Alignment-Attribution</a> and <a href="https://charxiv.github.io/">CharXiv</a>.</span>
   
   
       </div>

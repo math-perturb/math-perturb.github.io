@@ -3,6 +3,17 @@ body {
 }
 
 
+.fontGrad-bg{
+  /* font-size: 30px; */
+  font-weight: 700;
+  /* background-image: -webkit-linear-gradient(135deg, #c850c0, #47b5d6);
+  background-color: #4158D0; */
+  background-image: -webkit-linear-gradient(135deg, #00DBDE 0%, #FC00FF 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -108,4 +119,17 @@ body {
 }
 
 .publication-body img {
+}
+
+.fancy_text_color {
+  color: #3d7ade;
+  /* font-weight: bolder; */
+}
+
+.math_p_simple {
+  color: #078033;
+}
+
+.math_p_hard {
+  color: #963800;
 }
