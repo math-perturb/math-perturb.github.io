@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/dataTables.bulma.css">
 
   <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
@@ -171,7 +172,26 @@
     </div>
   </section>
 
-
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3" id="leaderboard"><span class="fancy_text_color">
+        Leaderboard</span>
+      </h2>
+      <div class="content">
+        <div class="content has-text-justified">
+          <p>
+            Leaderboard work in progress.
+        
+          </p>
+          <div class="has-text-centered">
+            <div id="table-container"></div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -198,6 +218,28 @@
       </div>
     </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+  <script src="./static/js/jquery.csv.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bulma.min.js"></script>
+  <script src="./static/js/csv_to_html_table.js"></script>
+  <script>
+    CsvToHtmlTable.init({
+      csv_path: 'data/result.csv', 
+      element: 'table-container', 
+      allow_download: true,
+      csv_options: {separator: ',', delimiter: '"'},
+      datatables_options: {
+        "paging": false, 
+        "order": [[3, 'desc']],
+        "columnDefs": [
+        {targets: [0], className: 'dt-left', className: 'dt-head-left'},
+        ]
+      }
+    });
+  </script>
 
 </body>
 </html>
