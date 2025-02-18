@@ -128,10 +128,12 @@ body {
 
 .math_p_simple {
   color: #078033;
+  font-family: sans-serif;
 }
 
 .math_p_hard {
   color: #963800;
+  font-family: sans-serif;
 }
 
 
