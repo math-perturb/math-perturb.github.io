@@ -35,17 +35,17 @@ CsvToHtmlTable = {
                 $tableHead.append($tableHeadRow1);
                 
                 var $tableHeadRow2 = $("<tr></tr>");
-                const explanations = ["The name of the model", 
-                "The weight availability of the model", 
-                "Score for all", 
-                "Score for train", 
-                "Score for test", 
-                "Score for all", 
-                "Score for train", 
-                "Score for test", 
-                "Score for all", 
-                "Score for train", 
-                "Score for test", 
+                const explanations = ["Model Name", 
+                "Date of Release", 
+                "Accuracy for all problems", 
+                "Accuracy for problems that originate from train split", 
+                "Accuracy for problems that originate from test split", 
+                "Accuracy for all problems", 
+                "Accuracy for problems that originate from train split", 
+                "Accuracy for problems that originate from test split", 
+                "Accuracy for all problems", 
+                "Accuracy for problems that originate from train split", 
+                "Accuracy for problems that originate from test split", 
                 ];
                 for (var headerIdx = 0; headerIdx < csvHeaderRow.length; headerIdx++) {
                     var explanation = explanations[headerIdx];
